@@ -1,9 +1,6 @@
 # Created by pyp2rpm-3.3.3
 %global pypi_name lz4
 
-%bcond_without docs
-%bcond_with tests
-
 Name:           python-%{pypi_name}
 Version:        3.0.2
 Release:        1
@@ -18,19 +15,7 @@ BuildRequires:  python-devel
 #BuildRequires:  python-pkgconfig
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(setuptools-scm)
-# for docs
-%if %{with docs}
-BuildRequires:  python3dist(sphinx) >= 1.6.0
-#BuildRequires:  python3dist(sphinx-bootstrap-theme)
-BuildRequires:  python3dist(sphinx)
-%endif
-# for tests
-%if %{with tests}
-BuildRequires:  python3dist(psutil)
-BuildRequires:  python3dist(pytest)
-#BuildRequires:  python3dist(pytest-cov)
-#BuildRequires:  python3dist(pytest-runner)
-%endif
+
 
 %description
 This package provides python bindings for the LZ4 compression library.
@@ -53,28 +38,12 @@ rm -rf %{pypi_name}.egg-info
 %build
 %py_build
 
-%if %{with docs}
-# build egg-info
-%py_build_egg
-# generate html docs
-PYTHONPATH=${PWD} sphinx-build-3 docs html
-# remove the sphinx-build leftovers
-rm -rf html/.{doctrees,buildinfo}
-%endif
-
 %install
 %py_install
-
-%if %{with tests}
-%check
-%{__python} setup.py test
-%endif
 
 %files 
 %license docs/license.rst LICENSE
 %doc README.rst
-%if %{with docs}
-%doc html
-%endif
+
 %{python_sitearch}/%{pypi_name}
-%{python_sitearch}/%{pypi_name}-%{version}-py%{python3_version}.egg-info
+%{python_sitearch}/%{pypi_name}-%{version}-py%{python_version}.egg-info
