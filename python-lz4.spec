@@ -15,7 +15,7 @@ Source0:        https://files.pythonhosted.org/packages/source/l/%{pypi_name}/%{
 
 BuildRequires:  python-devel
 #BuildRequires:  python3dist(flake8)
-BuildRequires:  python3dist(pkgconfig)
+BuildRequires:  python-pkgconfig
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(setuptools-scm)
 # for docs
