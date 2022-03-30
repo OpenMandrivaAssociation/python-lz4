@@ -15,6 +15,8 @@ BuildRequires:  python-devel
 #BuildRequires:  python-pkgconfig
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(setuptools-scm)
+BuildRequires:  python3dist(pip)
+BuildRequires:  python3dist(wheel)
 
 
 %description
