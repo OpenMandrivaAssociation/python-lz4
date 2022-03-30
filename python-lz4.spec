@@ -2,7 +2,7 @@
 %global pypi_name lz4
 
 Name:           python-%{pypi_name}
-Version:        3.0.2
+Version:        4.0.0
 Release:        1
 Summary:        LZ4 Bindings for Python
 Group:          Development/Python
