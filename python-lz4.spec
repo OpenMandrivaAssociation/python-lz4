@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:        4.0.0
-Release:        2
+Release:        3
 Summary:        LZ4 Bindings for Python
 Group:          Development/Python
 License:        None
