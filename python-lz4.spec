@@ -2,8 +2,8 @@
 %global pypi_name lz4
 
 Name:           python-%{pypi_name}
-Version:        4.0.0
-Release:        3
+Version:        4.4.5
+Release:        1
 Summary:        LZ4 Bindings for Python
 Group:          Development/Python
 License:        None
@@ -13,12 +13,12 @@ Source0:        https://files.pythonhosted.org/packages/source/l/%{pypi_name}/%{
 BuildRequires:  python-devel
 #BuildRequires:  python3dist(flake8)
 #BuildRequires:  python-pkgconfig
-BuildRequires:  python3dist(setuptools)
-BuildRequires:  python3dist(setuptools-scm)
-BuildRequires:  python3dist(pip)
-BuildRequires:  python3dist(wheel)
-BuildRequires:  python3dist(pkgconfig)
-BuildRequires:  python3dist(future)
+BuildRequires:  python%{pyver}dist(setuptools)
+BuildRequires:  python%{pyver}dist(setuptools-scm)
+BuildRequires:  python%{pyver}dist(pip)
+BuildRequires:  python%{pyver}dist(wheel)
+BuildRequires:  python%{pyver}dist(pkgconfig)
+BuildRequires:  python%{pyver}dist(future)
 
 
 %description
