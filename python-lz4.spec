@@ -50,4 +50,4 @@ rm -rf %{pypi_name}.egg-info
 %doc README.rst
 
 %{python_sitearch}/%{pypi_name}
-%{python_sitearch}/%{pypi_name}-%{version}-py%{python_version}.egg-info
+%{python_sitearch}/%{pypi_name}-*.dist-info
