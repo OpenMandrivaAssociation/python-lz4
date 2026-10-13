@@ -3,14 +3,15 @@
 
 Name:           python-%{pypi_name}
 Version:        4.4.5
-Release:        1
+Release:        2
 Summary:        LZ4 Bindings for Python
 Group:          Development/Python
-License:        None
+License:        BSD-3-Clause
 URL:            https://github.com/python-lz4/python-lz4
 Source0:        https://files.pythonhosted.org/packages/source/l/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 
-BuildRequires:  python-devel
+BuildRequires:  pkgconfig(python3)
+BuildRequires:  pkgconfig(liblz4)
 #BuildRequires:  python3dist(flake8)
 #BuildRequires:  python-pkgconfig
 BuildRequires:  python%{pyver}dist(setuptools)
@@ -40,6 +41,7 @@ Python. The package provides context managers and file handler support.
 rm -rf %{pypi_name}.egg-info
 
 %build
+export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %py_build
 
 %install
